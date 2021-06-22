@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-::root {
+:root {
     /*Body BG*/
     --Light-Gray: hsl(204, 43%, 93%);
     /*BL BG*/
@@ -17,35 +17,125 @@
     --Bright-Yellow: hsl(71, 73%, 54%);
     /* Text-color*/
     --Grayish-Blue: hsl(218, 22%, 67%);
-    
+
 }
 
 body {
     font-family: 'Karla', sans-serif;
+    background-color: var(--Light-Gray);
+    color: var(--Light-Gray);
+    height: 150vh; 
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 40% 60%;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-    "Top Top"
-    "BL BR";
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        /* grid-auto-columns: row; */
+        grid-template-areas:
+        "Top"
+        "BL"
+        "BR";
+        position: relative;
+        width: 80%;
+        height: 80%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.5;
 }
-  
-.Top { 
+
+.Top {
     grid-area: Top;
-    background-color: var(--Light-Gray);
+    background-color: whitesmoke;
+    color: var(--Grayish-Blue);
+    padding: 2rem;
 }
 
-.BL { 
-    grid-area: BL; 
-    background-color: var(--Light-Gray);
+.Top > h1 {
+    color: var(--Cyan);
+}
+.Top > h2 {
+    color: var(--Bright-Yellow);
 }
 
-.BR { 
+.BL {
+    grid-area: BL;
+    background-color: var(--Cyan);
+    padding: 2rem;
+}
+
+.BL > button {
+    background-color: var(--Bright-Yellow);
+    border-radius: 5px;
+    border-style: none;
+    width: 100%;
+    padding: 0.85rem;
+    color: white;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 10px;
+
+}
+
+.BR {
     grid-area: BR;
-    background-color: var(--Light-Gray);
+    background-color: var(--Light-Cyan);
+    padding: 2rem;
+}
+
+.title {
+    margin-bottom: 1.85rem;
+}
+
+.spans {
+    display: flex;
+    align-items: center;
+}
+.spans .price {
+    font-size: 2.35rem;
+    font-weight: 700;
+}
+
+.spans .frequency {
+    margin-left: 0.5rem;
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+
+footer {
+    bottom: 0;
+    position: fixed;
+}
+footer .attribution{
+    font-size: 11px;
+    text-align: center;
+}
+footer .attribution a{
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width:1440px) {
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-auto-columns: auto;
+        grid-template-areas:
+        "Top Top"
+        "BL BR";
+        position: relative;
+        height: 50%;
+        width: 60%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.5;
+    }
 }
