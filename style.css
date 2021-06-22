@@ -7,9 +7,15 @@
 }
 
 ::root {
-    --Cyan: hsl(179, 62%, 43%);
-    --Bright-Yellow: hsl(71, 73%, 54%);
+    /*Body BG*/
     --Light-Gray: hsl(204, 43%, 93%);
+    /*BL BG*/
+    --Cyan: hsl(179, 62%, 43%);
+    /*BR BG*/
+    --Light-Cyan: hsl(179, 47%, 52%);
+    /*Button*/
+    --Bright-Yellow: hsl(71, 73%, 54%);
+    /* Text-color*/
     --Grayish-Blue: hsl(218, 22%, 67%);
     
 }
